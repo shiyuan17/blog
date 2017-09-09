@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>企动客服知识库</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet"/> 
+    <link type="text/css" href="css/style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/skin/default/layer.css">
+    <link rel="stylesheet" href="css/zTreeStyle.css" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.exhide.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="user-info">
+            <div class="usr">
+                <span class="name">回显公众号名称</span>
+                <i class="triangle"></i>
+                <ul class="drop">
+                    <li>
+                        <a class="edi_data" href="javascript:;">
+                            <span class="text">编辑当前账号资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="man_gzh" href="javascript:;">
+                            <span class="text">管理其他公众号</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="return_sys" href="javascript:;">
+                            <span class="text">返回系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧菜单 -->
+    <div class="sideBar">
+        <a class="logo" href="javascript:;">
+            <img src="img/logo.png">
+        </a>
+        <ul>
+            <li class="barList">
+                <a class="pic act clearfix" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="text">知识库</span>
+                </a>
+                <ul class="show">
+                    <li class="twoMenuLi">
+                        <a class="pic act clearfix" href="zskzl.html">
+                            <span class="icon"></span>
+                            <span class="text">知识库管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="gdgl.html">
+                            <span class="icon"></span>
+                            <span class="text">工单管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="cjwt.html">
+                            <span class="icon"></span>
+                            <span class="text">常见问题列表</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="bq.html">
+                            <span class="icon"></span>
+                            <span class="text">标签列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="yggl.html">
+                    <span class="icon"></span>
+                    <span class="text">员工管理</span>
+                </a>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="setting.html">
+                    <span class="icon"></span>
+                    <span class="text">设置中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 中间内容 -->
+    <div class="mainContent clearfix">
+        <div class="center-con clearfix">
+            <h2 class="main-ttl">知识库管理</h2>
+            <div class="main-ctn clearfix">
+                <div class="col-sm-12 pad0">
+                    <div class="col-sm-3 pad0">
+                        <div class="mr30" style="border:1px solid #ddd;overflow-y: scroll;min-height: 500px;">
+                            <div class="zTreeDemoBackground left">
+                                <ul id="treeDemo" class="ztree"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-9 pad0">
+                        <div class="item clearfix">
+                            <input type="text" class="input-text" name="_q" placeholder="请输入问题">
+                            <button type="button" class="Btn ml10" id="search">搜索</button>
+                        </div>
+                        <div class="selectClass clearfix">
+                            <div class="selected clearfix">
+                                <div class="pull-left" style="line-height: 30px; width: 60px; margin-top: 10px"><span class="tit">您已选择：</span></div>
+                                <div class="pull-left" style=" width: 90%; margin-top: 10px">
+                                    <ul class="clearfix selectedFl" id="selected">
+                                        <li class="fl" id="5"><span>仕馨仕馨</span>  &times;</li>
+                                        <li class="fl" id="6"><span>仕馨仕馨</span>  &times;</li>
+                                        <li class="fl" id="7"><span>仕馨仕馨</span>  &times;</li>
+                                        <div class="verticalBar"></div>
+                                        <li class="bq" id="8"><span>仕馨仕馨</span>  &times;</li>
+                                        <li class="bq" id="9"><span>仕馨仕馨</span>  &times;</li>
+                                        <li class="bq" id="10"><span>仕馨仕馨</span>  &times;</li>
+                                        <li class="bq" id="11"><span>仕馨仕馨</span>  &times;</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="two_c clearfix">
+                                <div class="pull-left tit">二级分类：</div>
+                                <div class="pull-left" style="width: 80%; margin-top:10px">
+                                    <ul class="clearfix fl-list" id="fl">
+                                        <li id="1">社群社群社群社群</li>
+                                        <li id="2">社群</li> 
+                                        <li id="3">社群</li> 
+                                        <li id="4">社群</li>             
+                                    </ul>
+                                </div>
+                                <div class="pull-left more"><b>更多</b><span class="iconMore"> &Lambda;</span></div>
+                            </div>
+                            <div class="two_c clearfix" style="border-bottom: none">
+                                <div class="pull-left tit">标签：</div>
+                                <div class="pull-left" style="width: 80%; margin-top:10px">
+                                    <ul class="clearfix fl-list" id="bq">
+                                        <li id="1">会员</li>
+                                        <li id="2">会员</li>
+                                        <li id="3">会员</li>
+                                        <li id="4">会员</li>
+
+                                    </ul>
+                                </div>
+                                <div class="pull-left more"><b>更多</b><span class="iconMore"> &Lambda;</span></div>
+                            </div>
+                        </div>
+                        <div class="item clearfix">
+                            <button type="button" class="Btn" id="add_q" onclick="window.location.href='add_wtk.html'">添加问题</button>
+                            <button type="button" class="Btn ml10" id="all_delete">批量删除</button>
+                            <button type="button" class="Btn ml10" id="add_execl" onclick="window.location.href='execl.html'">批量导入</button>
+                        </div>
+                        <table class="user-tb">
+                            <tbody>
+                                <tr class="tb-hd">
+                                    <th><input type="checkbox" name="allSelect"></th>
+                                    <th>序号</th>
+                                    <th width="25%">问题</th>
+                                    <th  width="25%">答案</th>
+                                    <th>最后编辑时间</th>
+                                    <th>编辑人</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr class="tb-ctn">
+                                    <td><input type="checkbox" name="checkbox"></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="add_wtk.html" class="mr5">编辑</a>
+                                        <a class="delete" data-url="123" data-rel="0">删除</a>
+                                        <a href="javascript:;" class="set">设为常见</a>
+                                        <input type="hidden" name="setVal" value="">
+                                    </td>
+                                </tr>
+                                <tr class="tb-ctn">
+                                    <td><input type="checkbox" name="checkbox"></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="add_wtk.html" class="mr5">编辑</a>
+                                        <a class="delete" data-url="123" data-rel="0">删除</a>
+                                        <a href="javascript:;" class="set">设为常见</a>
+                                        <input type="hidden" name="setVal" value="">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-pager clearfix">
+                            <span class="pager-total">共4条数据</span>
+                            <span class="pager-txt">每页显示：</span>
+                            <select class="pager-select">
+                                <option>5</option>
+                                <option>10</option>
+                                <option>20</option>
+                            </select>
+                            <ul class="m-pager">
+                                <li class="first"><a>首页</a></li>
+                                <li class="prev active"><span>上一页</span></li>
+                                <li class="num active"><a>1</a></li>
+                                <li class="num"><span>2</span></li>
+                                <li class="next"><a>下一页</a></li>
+                                <li class="last"><a>尾页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出框 -->
+    <div class="m-modal">
+        <div class="sure-modal tip">
+            <div class="modal-hd">
+                <a class="close">
+                    <i></i>
+                </a>
+                <h3>提示</h3>
+            </div>
+            <div class="tip-text">确认要删除吗</div>
+            <div class="modal-ft clearfix">
+                <a href="" class="btn sure">确定</a>
+                <span class="btn cancel">取消</span>
+            </div>
+        </div>
+        <div class="tip-modal tip">
+            <div class="modal-hd">
+                <a class="close">
+                    <i></i>
+                </a>
+                <h3>提示</h3>
+            </div>
+            <div class="tip-text">该目录下有其他数据关联，请取消关联后再删除。</div>
+            <div class="modal-ft">
+                <span class="btn get-tip">知道了</span>
+            </div>
+        </div>
+    </div>
+    <!-- 底部内容 -->
+    <div class="footerContent clearfix navbar-fixed-bottom">
+Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司 | 咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+    </div>
+<script>
+$(function(){
+    //设为常见
+    $('body').on('click','.set',function(){
+        var $t=$(this).text();
+        if($t=='设为常见'){
+            $(this).text('取消常见');
+            $(this).css('color','red');
+            $(this).siblings('input[name=setVal]').val('1')
+        }else{
+            $(this).text('设为常见');
+            $(this).css('color','#2987e6');
+            $(this).siblings('input[name=setVal]').val('')
+        }
+    })
+    //更多
+    $('.iconMore').on('click',function(){
+        var get_x=$(this).siblings('b').text();
+        if(get_x=='更多'){
+            $(this).siblings('b').text('收起');
+            $(this).addClass('iconMore180');
+            $(this).parent('.more').prev().find('ul.fl-list').css({'height':'auto'})
+        }else{
+            $(this).siblings('b').text('更多');
+            $(this).removeClass('iconMore180');
+            $(this).parent('.more').prev().find('ul.fl-list').css({'height':'80px'})
+        }
+    })
+    //选择分类
+    $('body').on('click','#fl li',function(){
+        var getId=$(this).attr('id');
+        var getHtml=$(this).text();
+        var li='<li class="fl" id="'+getId+'"><span>'+getHtml+'</span>  &times;</li>';
+        $('#selected .verticalBar').before(li)
+    })
+    //选择标签
+    $('body').on('click','#bq li',function(){
+        var getId=$(this).attr('id');
+        var getHtml=$(this).text();
+        var li='<li class="bq" id="'+getId+'"><span>'+getHtml+'</span>  &times;</li>';
+        $('#selected').append(li)
+    })
+    //删除
+    $('body').on('click','#selected li',function(){
+        $(this).remove()
+    })
+})
+</script>
+<SCRIPT type="text/javascript">
+        <!--
+        var setting = {
+            check: {
+                enable: true
+            },
+            data: {
+                key: {
+                    title: "title"
+                },
+                simpleData: {
+                    enable: true
+                }
+            },
+            callback: {
+                onCheck: onCheck
+            }
+        };
+
+        var zNodes =[
+            { id:1, pId:0, name:"pNode 1", title:"", checked:true, open:true},
+            { id:11, pId:1, name:"pNode 11", title:"", checked:true},
+            { id:111, pId:11, name:"leaf node 111", title:"", checked:true, isHidden:true},
+            { id:112, pId:11, name:"leaf node 112", title:""},
+            { id:113, pId:11, name:"leaf node 113", title:""},
+            { id:12, pId:1, name:"pNode 12", title:"", isHidden:true},
+            { id:121, pId:12, name:"leaf node 121", title:""},
+            { id:122, pId:12, name:"leaf node 122", title:"", isHidden:true},
+            { id:123, pId:12, name:"leaf node 123", title:""},
+            { id:2, pId:0, name:"pNode 2", title:""},
+            { id:21, pId:2, name:"pNode 21", title:"", isHidden:true},
+            { id:211, pId:21, name:"leaf node 211", title:""},
+            { id:212, pId:21, name:"leaf node 212", title:""},
+            { id:213, pId:21, name:"leaf node 213", title:""},
+            { id:22, pId:2, name:"pNode 22", title:""},
+            { id:221, pId:22, name:"leaf node 221", title:""},
+            { id:222, pId:22, name:"leaf node 222", title:""},
+            { id:223, pId:22, name:"leaf node 223", title:""}
+        ];
+
+        function onCheck(e, treeId, treeNode) {
+            count();
+        }
+
+        function setTitle(node) {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+            var nodes = node ? [node]:zTree.transformToArray(zTree.getNodes());
+            for (var i=0, l=nodes.length; i<l; i++) {
+                var n = nodes[i];
+                n.title = "[" + n.id + "] isFirstNode = " + n.isFirstNode + ", isLastNode = " + n.isLastNode;
+                zTree.updateNode(n);
+            }
+        }
+        function count() {
+            function isForceHidden(node) {
+                if (!node.parentTId) return false;
+                var p = node.getParentNode();
+                return !!p.isHidden ? true : isForceHidden(p);
+            }
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            checkCount = zTree.getCheckedNodes(true).length,
+            nocheckCount = zTree.getCheckedNodes(false).length,
+            hiddenNodes = zTree.getNodesByParam("isHidden", true),
+            hiddenCount = hiddenNodes.length;
+
+            for (var i=0, j=hiddenNodes.length; i<j; i++) {
+                var n = hiddenNodes[i];
+                if (isForceHidden(n)) {
+                    hiddenCount -= 1;
+                } else if (n.isParent) {
+                    hiddenCount += zTree.transformToArray(n.children).length;
+                }
+            }
+
+            $("#isHiddenCount").text(hiddenNodes.length);
+            $("#hiddenCount").text(hiddenCount);
+            $("#checkCount").text(checkCount);
+            $("#nocheckCount").text(nocheckCount);
+        }
+        function showNodes() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            nodes = zTree.getNodesByParam("isHidden", true);
+            zTree.showNodes(nodes);
+            setTitle();
+            count();
+        }
+        function hideNodes() {
+            var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+            nodes = zTree.getSelectedNodes();
+            if (nodes.length == 0) {
+                alert("Please select one node at least.");
+                return;
+            }
+            zTree.hideNodes(nodes);
+            setTitle();
+            count();
+        }
+
+        $(document).ready(function(){
+            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+            $("#hideNodesBtn").bind("click", {type:"rename"}, hideNodes);
+            $("#showNodesBtn").bind("click", {type:"icon"}, showNodes);
+            setTitle();
+            count();
+        });
+        //-->
+    </SCRIPT>
+</body>
+</html>

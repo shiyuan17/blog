@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>企动客服知识库</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet"/> 
+    <link type="text/css" href="css/style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/skin/default/layer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/common.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="user-info">
+            <div class="usr">
+                <span class="name">回显公众号名称</span>
+                <i class="triangle"></i>
+                <ul class="drop">
+                    <li>
+                        <a class="edi_data" href="javascript:;">
+                            <span class="text">编辑当前账号资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="man_gzh" href="javascript:;">
+                            <span class="text">管理其他公众号</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="return_sys" href="javascript:;">
+                            <span class="text">返回系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧菜单 -->
+    <div class="sideBar">
+        <a class="logo" href="javascript:;">
+            <img src="img/logo.png">
+        </a>
+        <ul>
+            <li class="barList">
+                <a class="pic clearfix" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="text">知识库</span>
+                </a>
+                <ul class="show">
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="zskzl.html">
+                            <span class="icon"></span>
+                            <span class="text">知识库管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="gdgl.html">
+                            <span class="icon"></span>
+                            <span class="text">工单管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="cjwt.html">
+                            <span class="icon"></span>
+                            <span class="text">常见问题列表</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="bq.html">
+                            <span class="icon"></span>
+                            <span class="text">标签列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="yggl.html">
+                    <span class="icon"></span>
+                    <span class="text">员工管理</span>
+                </a>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="setting.html">
+                    <span class="icon"></span>
+                    <span class="text">设置中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 中间内容 -->
+    <div class="mainContent clearfix">
+        <div class="center-con clearfix">
+            <h2 class="main-ttl">导入</h2>
+            <div class="main-ctn clearfix">
+                <div class="col-sm-12 execlList text-center">
+                    <button class="Btn active" type="button">1.下载标准模板</button> &gt;
+                    <button class="Btn" type="button">2.上传</button> &gt;
+                    <button class="Btn" type="button">3.完成</button>
+                </div>
+                <div class="col-sm-12 execlCon text-center mt20">
+                    <div class="tab_content" style="display: block;">
+                        <button class="Btn" type="button">下载标准模板</button>
+                        <p class="mt5">点击下载模板，请按照格式填写</p>
+                    </div>
+                    <div class="tab_content">
+                        <div class="selectDic">
+                            <button class="Btn" type="button">选择文件</button>
+                            <input type="file" id="file">
+                        </div>
+                        <div class="mt5"><button class="Btn" type="button" id="upload">上传</button></div>
+                    </div>
+                    <div class="tab_content">
+                        <h2>成功导入55个信息</h2>
+                        <p class="mt5">（8个信息导入失败）</p>
+                        <a href="">下载</a>
+                    </div>
+                </div>
+                <div class="col-sm-12 return pad0" style="position: absolute;bottom: 30px;left: 20px;">
+                    <button class="Btn" type="button" onclick="window.history.go(-1);">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部内容 -->
+    <div class="footerContent clearfix navbar-fixed-bottom">
+Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司 | 咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+    </div>
+<script>
+$(function(){
+    //tab切换内容
+    $('.execlList').find('button').eq(0).on('click',function(){
+        $(this).addClass('active').siblings('button').removeClass('active');
+        $('.tab_content').eq(0).show().siblings('.tab_content').hide();
+    })
+    $('.execlList').find('button').eq(1).on('click',function(){
+        $(this).addClass('active').siblings('button').removeClass('active');
+        $('.tab_content').eq(1).show().siblings('.tab_content').hide();
+    })
+    //上传
+    $('body').on('click','#upload',function(){
+        var file=$('#file').val();
+        if(file==''){
+            layer.msg('请选择文件')
+        }else{
+            layer.msg('正在上传');
+            setTimeout(function(){
+                $('.execlList').find('button').eq(2).show();
+                $('.execlList').find('button').eq(2).addClass('active').siblings('button').removeClass('active');
+                $('.tab_content').eq(2).show().siblings('.tab_content').hide();
+            },3000)
+        }
+    })
+})
+</script>
+</body>
+</html>

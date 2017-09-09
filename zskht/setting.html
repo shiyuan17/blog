@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>企动客服知识库</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet"/> 
+    <link type="text/css" href="css/style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/skin/default/layer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<style>
+.tb-pager{margin-bottom: 80px!important}
+</style>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="user-info">
+            <div class="usr">
+                <span class="name">回显公众号名称</span>
+                <i class="triangle"></i>
+                <ul class="drop">
+                    <li>
+                        <a class="edi_data" href="javascript:;">
+                            <span class="text">编辑当前账号资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="man_gzh" href="javascript:;">
+                            <span class="text">管理其他公众号</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="return_sys" href="javascript:;">
+                            <span class="text">返回系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧菜单 -->
+    <div class="sideBar">
+        <a class="logo" href="javascript:;">
+            <img src="img/logo.png">
+        </a>
+        <ul>
+            <li class="barList">
+                <a class="pic clearfix" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="text">知识库</span>
+                </a>
+                <ul class="show">
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="zskzl.html">
+                            <span class="icon"></span>
+                            <span class="text">知识库管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="gdgl.html">
+                            <span class="icon"></span>
+                            <span class="text">工单管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="cjwt.html">
+                            <span class="icon"></span>
+                            <span class="text">常见问题列表</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="bq.html">
+                            <span class="icon"></span>
+                            <span class="text">标签列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="yggl.html">
+                    <span class="icon"></span>
+                    <span class="text">员工管理</span>
+                </a>
+            </li>
+            <li class="barList">
+                <a class="pic act clearfix" href="setting.html">
+                    <span class="icon"></span>
+                    <span class="text">设置中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 中间内容 -->
+    <div class="mainContent clearfix">
+        <div class="center-con clearfix">
+            <h2 class="main-ttl">设置中心</h2>
+            <div class="main-ctn clearfix">
+                <div class="gdgl-tab clearfix">
+                    <ul class="clearfix">
+                        <li class="active">基础配置</li>
+                        <li>入口链接</li>
+                        <li>七牛云配置</li>
+                        <li>模板消息配置</li>
+                    </ul>
+                </div>
+                <div class="gdgl-tab-cpontent" style="display: block;">
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>网站名称:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="webSiteName">
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>版权信息:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="versionInfo">
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>知识库logo:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 564px;float: left;" class="input-text" id="logoUrl" value="" name="logoUrl">
+                            <div style="float: left; position: relative;height: 28px;">
+                                <button style="width: 100px; height: 28px; line-height: 28px;float: left;" type="button" class="Btn">选择图片</button>
+                                <input type="file" id="selectFile" name="selectFile" style="width: 100px;height: 28px; position: absolute;left: 0;top: 0; opacity: 0;cursor: pointer;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item mt10 clearfix" style="margin-left: 100px; width: 100%; min-height: 100px">
+                        <div id="image-preview" style="min-height: 100px"></div>
+                        <p>建议尺寸120px*35px</p>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>统计代码:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="statisticsCode">
+                        </div>
+                    </div>
+                    <div class="item clearfix mt20" style="position: absolute;left: 20px;bottom: 20px;">
+                        <button type="button" class="Btn ml10" id="submit_1">提交</button>
+                    </div>
+                </div>
+                <div class="gdgl-tab-cpontent clearfix">LOOk原型</div>
+                <div class="gdgl-tab-cpontent clearfix">
+                    <div class="title mt20" style="background: #f5f5f5; padding:5px">七牛云配置 <span class="c-red">七牛云官网www.qiniu.com</span></div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>ACCESS_KEY:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="access_key">
+                            <p class="c-red" style="margin: 0;line-height: 20px">登录七牛开发者平台->个人面板->密钥管理，复制AccessKey填入此处</p>
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>SECREY_KEY:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="secrey_key">
+                            <p class="c-red" style="margin: 0;line-height: 20px">登录七牛开发者平台->个人面板->密钥管理，复制SecrreyKey填入此处</p>
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>BUCKET:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="bucket">
+                            <p class="c-red" style="margin: 0;line-height: 20px">登录七牛开发者平台->对象存储，在存储空间列表中找到建立的空间并复制存储空间名称填入此处</p>
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>URL:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="url">
+                            <p class="c-red" style="margin: 0;line-height: 20px">登录七牛开发者平台->对象存储，在存储空间列表中找到建立的空间，进入空间概览复制域名填入此处，需要在复制的域名前面加上http://</p>
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>上传最大限制:</span>
+                        </div>
+                        <div class="r">
+                            <input type="number" style="width: 664px" class="input-text" name="maxNum">
+                            <p class="c-red" style="margin: 0;line-height: 20px">单位为M</p>
+                        </div>
+                    </div>
+                    <div class="item clearfix mt20" style="position: absolute;left: 20px;bottom: 20px;">
+                        <button type="button" class="Btn ml10" id="submit_3">提交</button>
+                    </div>
+                </div>
+                <div class="gdgl-tab-cpontent clearfix">
+                    <div class="title mt20" style="background: #f5f5f5; padding:5px">模板消息 </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>填写工单:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="input-gd">
+                            <p style="margin: 0;line-height: 20px;color: #999">在您授权绑定的公众号平台（IT科技-互联网|电子商务行业）模板库搜素“”——编号添加后将获取的模板id填入此处</p>
+                        </div>
+                    </div>
+                    <div class="item mt20 clearfix">
+                        <div class="l text-right" style="width: 100px">
+                            <span class="c-red">*</span><span>收到回复:</span>
+                        </div>
+                        <div class="r">
+                            <input type="text" style="width: 664px" class="input-text" name="receiveMsg">
+                            <p style="margin: 0;line-height: 20px;color: #999">在您授权绑定的公众号平台（IT科技-互联网|电子商务行业）模板库搜素“”——编号添加后将获取的模板id填入此处</p>
+                        </div>
+                    </div>
+                    <div class="item clearfix mt20" style="position: absolute;left: 20px;bottom: 20px;">
+                        <button type="button" class="Btn ml10" id="submit_4">提交</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部内容 -->
+    <div class="footerContent clearfix navbar-fixed-bottom">
+Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司 | 咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+    </div>
+<script>
+$(function(){
+    //tab切换
+    $('.gdgl-tab ul li').on('click',function(){
+        var index=$(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.gdgl-tab-cpontent').eq(index).show().siblings('.gdgl-tab-cpontent').hide();
+    })
+    var
+    fileInput = document.getElementById('selectFile'),
+    info = document.getElementById('logoUrl'),
+    preview = document.getElementById('image-preview');
+    // 监听change事件:
+    fileInput.addEventListener('change', function () {
+        // 清除背景图片:
+        preview.style.background = '';
+        // 检查文件是否选择:
+        if (!fileInput.value) {
+            info.value = '没有选择文件';
+            return;
+        }
+        // 获取File引用:
+        var file = fileInput.files[0];
+        // 获取File信息:
+        info.value =file.name ;
+                         // '大小: ' + file.size + '<br>' +
+                         // '修改: ' + file.lastModifiedDate;
+        if (file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+            alert('不是有效的图片文件!');
+            return;
+        }
+        // 读取文件:
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var data = e.target.result; // 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...'       
+            preview.style.background = 'url(' + data + ') no-repeat left top';
+        };
+        // 以DataURL的形式读取文件:
+        reader.readAsDataURL(file);
+    });
+
+    //提交1
+    $('body').on('click','#submit_1',function(){
+        var
+            webSiteName=$('input[name=webSiteName]').val();
+            versionInfo=$('input[name=versionInfo]').val(); 
+            logoUrl=$('input[name=logoUrl]').val(); 
+            statisticsCode=$('input[name=statisticsCode]').val(); 
+        if(webSiteName==''){
+            layer.msg('请输入网站名称');
+            return
+        } 
+        if(versionInfo==''){
+            layer.msg('请输入版权信息');
+            return
+        } 
+        if(logoUrl==''){
+            layer.msg('请输入知识库logo');
+            return
+        } 
+        if(statisticsCode==''){
+            layer.msg('请输入统计代码');
+            return
+        } 
+    })
+    //提交3
+    $('body').on('click','#submit_3',function(){
+        var
+            access_key=$('input[name=access_key]').val();
+            secrey_key=$('input[name=secrey_key]').val(); 
+            bucket=$('input[name=bucket]').val(); 
+            url=$('input[name=url]').val(); 
+            maxNum=$('input[name=maxNum]').val();
+        if(access_key==''){
+            layer.msg('请输入ACCESS_KEY');
+            return
+        } 
+        if(secrey_key==''){
+            layer.msg('请输入SECREY_KEY');
+            return
+        } 
+        if(bucket==''){
+            layer.msg('请输入BUCKET');
+            return
+        } 
+        if(url==''){
+            layer.msg('请输入URL');
+            return
+        } 
+        if(maxNum==''){
+            layer.msg('请输入上传最大限制');
+            return
+        }  
+    })
+    //提交4
+    $('body').on('click','#submit_4',function(){
+        var
+            inputGd=$('input[name=input-gd]').val();
+            receiveMsg=$('input[name=receiveMsg]').val(); 
+        if(inputGd==''){
+            layer.msg('请输入工单');
+            return
+        } 
+        if(receiveMsg==''){
+            layer.msg('请输入回复');
+            return
+        } 
+    })
+})
+</script>
+</body>
+</html>

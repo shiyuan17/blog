@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的工单</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/ydui.css?rev=@@hash"/>
+    <link href="css/pullToRefresh.css" type="text/css" rel="stylesheet" />
+<!--     <link rel="stylesheet" type="text/css" href="css/swiper-3.3.1.min.css"/> -->
+    <script src="js/ydui.flexible.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/ydui.js"></script>
+    <script src="js/index.js"></script>
+    <!-- <script src="js/swiper.jquery.min.js" type="text/javascript" charset="utf-8"></script> -->
+    <script src="js/iscroll.js"></script>
+    <script src="js/pullToRefresh.js"></script>
+</head>
+<body>
+<section class="g-flexview">
+    <div class="g-scrollview">
+		<div id="J_Tab" class="m-tab">
+		    <ul class="tab-nav" style="width: 100%;position: fixed;left: 0;top: 0;z-index: 99">
+		        <li class="tab-nav-item tab-active"><a href="javascript:;">售后工单</a><span class="badge badge-danger"></span></li>
+		        <li class="tab-nav-item"><a href="javascript:;">常见问题</a></li>
+		    </ul>
+		    <div class="tab-panel" style="margin-top: 0.85rem;margin-bottom: 2rem;">
+		        <div class="tab-panel-item tab-active">
+					<div class="gd" id="J_ListContent" style="width: 93.5%">
+						<ul>
+							<li>
+								<a href="">
+									<div class="l">
+										<div class="title">【已回复】 社群的会员卡功能卡怎么用？社群的会员卡功能卡怎么用？</div>
+										<div class="create-time">创建时间：2017-08-12 16:00</div>
+									</div>
+									<div class="r cell-arrow"></div>
+								</a>
+								<div class="q_circle"></div>
+							</li>
+							<li>
+								<a href="">
+									<div class="l">
+										<div class="title">【已回复】 社群的会员卡功能卡怎么用？社群的会员卡功能卡怎么用？</div>
+										<div class="create-time">创建时间：2017-08-12 16:00</div>
+									</div>
+									<div class="r cell-arrow"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="l">
+										<div class="title">【已回复】 社群的会员卡功能卡怎么用？社群的会员卡功能卡怎么用？</div>
+										<div class="create-time">创建时间：2017-08-12 16:00</div>
+									</div>
+									<div class="r cell-arrow"></div>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									<div class="l">
+										<div class="title">【已回复】 社群的会员卡功能卡怎么用？社群的会员卡功能卡怎么用？</div>
+										<div class="create-time">创建时间：2017-08-12 16:00</div>
+									</div>
+									<div class="r cell-arrow"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+		        </div>
+		        <div class="tab-panel-item" style="padding:0;padding-top: 0.24rem">
+		        	<div class="m-cell" style="margin: 0; background-color:#f5f5f5 ">
+					    <div class="cell-item">
+					        <div class="cell-left" style="font-weight: bold;">售前</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </div>
+					</div>
+					<div class="m-cell">
+					    <a class="cell-item" href="javascript:;">
+					        <div class="cell-left">&bull; 协会</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </a>
+					    <a class="cell-item" href="javascript:;">
+					        <div class="cell-left">&bull; 一码付</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </a>
+					</div>
+					<div class="m-cell" style="margin: 0; background-color:#f5f5f5 ">
+					    <div class="cell-item">
+					        <div class="cell-left" style="font-weight: bold;">售后</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </div>
+					</div>
+					<div class="m-cell">
+					    <a class="cell-item" href="javascript:;">
+					        <div class="cell-left">&bull; 协会</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </a>
+					    <a class="cell-item" href="javascript:;">
+					        <div class="cell-left">&bull; 一码付</div>
+					        <div class="cell-right cell-arrow"></div>
+					    </a>
+					</div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+    <div class="creatGd">
+		<a href="javascript:;" class="btn-block btn-primary" style="margin-top: 0">创建工单</a>
+		<p>版权所有：@深圳博纳信息公司</p>
+    </div>
+</section>
+<script>
+refresher.init({
+	id:"J_ListContent",
+	pullDownAction:Refresh,
+	});
+		
+	var generatedCount = 0;
+function Refresh() {
+	console.info(55)
+	setTimeout(function () {	//  Simulate network congestion, remove setTimeout from production!
+		var html='<li>' +
+			'<a href="">' +
+				'<div class="l">' +
+					'<div class="title">【已回复】 社群的会员卡功能卡怎么用？社群的会员卡功能卡怎么用？</div>' +
+					'<div class="create-time">创建时间：2017-08-12 16:00</div>' +
+				'</div>' +
+				'<div class="r cell-arrow"></div>' +
+			'</a>' +
+		'</li>';
+		$('#J_ListContent ul').append(html)
+		myScroll.refresh();/****remember to refresh when you action was completed！！！****/
+	}, 1000);
+}
+
+</script>
+</body>
+</html>

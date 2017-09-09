@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>企动客服知识库</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet"/> 
+    <link type="text/css" href="css/style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/skin/default/layer.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+</head>
+<style>
+.tb-pager{margin-bottom: 80px!important}
+</style>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="user-info">
+            <div class="usr">
+                <span class="name">回显公众号名称</span>
+                <i class="triangle"></i>
+                <ul class="drop">
+                    <li>
+                        <a class="edi_data" href="javascript:;">
+                            <span class="text">编辑当前账号资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="man_gzh" href="javascript:;">
+                            <span class="text">管理其他公众号</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="return_sys" href="javascript:;">
+                            <span class="text">返回系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧菜单 -->
+    <div class="sideBar">
+        <a class="logo" href="javascript:;">
+            <img src="img/logo.png">
+        </a>
+        <ul>
+            <li class="barList">
+                <a class="pic clearfix" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="text">知识库</span>
+                </a>
+                <ul class="show">
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="zskzl.html">
+                            <span class="icon"></span>
+                            <span class="text">知识库管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="gdgl.html">
+                            <span class="icon"></span>
+                            <span class="text">工单管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="cjwt.html">
+                            <span class="icon"></span>
+                            <span class="text">常见问题列表</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="bq.html">
+                            <span class="icon"></span>
+                            <span class="text">标签列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="barList">
+                <a class="pic act clearfix" href="yggl.html">
+                    <span class="icon"></span>
+                    <span class="text">员工管理</span>
+                </a>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="setting.html">
+                    <span class="icon"></span>
+                    <span class="text">设置中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 中间内容 -->
+    <div class="mainContent clearfix">
+        <div class="center-con clearfix">
+            <h2 class="main-ttl">添加员工</h2>
+            <div class="main-ctn clearfix">
+                <div class="item  clearfix">
+                    <span>微信昵称：</span>
+                    <input type="text" class="input-text" name="wxName" placeholder="请输入微信昵称">
+                    <span class="pl20">微信号/ID：</span>
+                    <input type="text" class="input-text" name="wxId" placeholder="请输入微信号/ID">
+                    <span class="pl20">关注时间：</span>
+                    <input type="text" class="input-text Wdate" name="contactTime" placeholder="请选择关注时间" onclick="WdatePicker({skin:'whyGreen',dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+                    <button type="button" class="Btn ml10" id="sx">筛选</button>
+                    <button type="button" class="Btn ml10" id="clearfixSx">清空筛选</button>
+                </div>
+                <div class="item  clearfix">
+                    <button type="button" class="Btn" id="plsq">批量授权</button>
+                </div>
+                <table class="user-tb">
+                    <tbody>
+                        <tr class="tb-hd">
+                            <th><input type="checkbox" name="allSelect"></th>
+                            <th>头像</th>
+                            <th>微信昵称</th>
+                            <th>微信号ID</th>
+                            <th>关注时间</th>
+                            <th>操作</th>
+                        </tr>
+                        <tr class="tb-ctn">
+                            <td><input type="checkbox" name="checkbox"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <a href="javascript:;" class="mr5">授权登录</a>
+                            </td>
+                        </tr>
+                        <tr class="tb-ctn">
+                            <td><input type="checkbox" name="checkbox"></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>
+                                <a href="javascript:;" class="mr5">授权登录</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="tb-pager clearfix">
+                    <span class="pager-total">共4条数据</span>
+                    <span class="pager-txt">每页显示：</span>
+                    <select class="pager-select">
+                        <option>5</option>
+                        <option>10</option>
+                        <option>20</option>
+                    </select>
+                    <ul class="m-pager">
+                        <li class="first"><a>首页</a></li>
+                        <li class="prev active"><span>上一页</span></li>
+                        <li class="num active"><a>1</a></li>
+                        <li class="num"><span>2</span></li>
+                        <li class="next"><a>下一页</a></li>
+                        <li class="last"><a>尾页</a></li>
+                    </ul>
+                </div>
+                <div class="item clearfix mt20" style="position: absolute; left: 20px;bottom: 20px;">
+                    <button type="submit" class="Btn" id="submit">提交</button>
+                    <button type="button" class="Btn ml10" id="return" onclick="window.history.go(-1);">返回/取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部内容 -->
+    <div class="footerContent clearfix navbar-fixed-bottom">
+Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司 | 咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+    </div>
+<script>
+$(function(){
+    //筛选
+    $('#sx').on('click',function(){
+        var wxName=$('input[name=wxName]').val();
+        var wxId=$('input[name=wxId]').val();
+        var contactTime=$('input[name=contactTime]').val();
+        if(wxName!=''||wxId!=''||contactTime!=''){
+            layer.msg('正在筛选中');
+        }else{
+            layer.msg('请输入');
+        }
+    })
+    //清空筛选
+    $('#clearfixSx').on('click',function(){
+        $('input[name=wxName]').val('');
+        $('input[name=wxId]').val('');
+        $('input[name=contactTime]').val('');
+        layer.msg('已清空');
+    })
+    //批量授权
+    $('#plsq').on('click',function(){
+        if($('input[name=checkbox]').is(':checked')){
+            $('.tb-ctn').each(function(){
+                if($(this).find('input[name=checkbox]').is(':checked')){
+                    $(this).find('.is_sq').text('已授权');
+                    layer.msg('授权成功');
+                }
+            })
+        }else{
+            layer.msg('请勾选');
+        }
+    })
+})
+</script>
+</body>
+</html>

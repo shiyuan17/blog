@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>企动客服知识库</title>
+<link rel="stylesheet" href="css/layui.css">
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="img/logo.png" alt=""><span>企动</span><b>客服知识库</b></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="zsk.html">知识库</a></li>
+      <li class="layui-nav-item layui-this"><a href="gdMangement.html">工单管理</a><span class="layui-badge">66</span></li>
+      <li class="layui-nav-item"><a href="cjwt.html">常见问题</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;" class="exit">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          退出登录
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">售前</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="javascript:;">列表三</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">售后</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">特殊</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <form class="layui-form" action="">
+        <div class="search layui-clear">
+          <div class="layui-col-xs6" style="position: relative;">
+            <img src="img/search.png" alt="" style="position: absolute;left:12px; top:9px;">
+            <input style="padding-left:40px; " type="text" name="searchInput" required  lay-filter="searchInput" placeholder="请输入问题或关键词" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-col-xs6">
+            <button class="layui-btn" type="button" style="width: 130px; margin-left: 20px;" id="search" lay-submit lay-filter="searchBtn">检索</button>
+          </div>
+        </div>
+      </form>
+      <form class="layui-form" action="">
+        <div class="dateBox layui-clear">
+          创建时间
+          <div class="layui-inline" style="margin-left: 15px; margin-right: 20px"> <!-- 注意：这一层元素并不是必须的 -->
+            <input type="text" class="layui-input" required id="test1" placeholder="yyyy-MM-dd" name="date" lay-filter="date">
+          </div>
+          <button class="layui-btn" type="button" style="width: 130px;" id="clear">清除</button>
+          <button class="layui-btn" type="button" style="width: 130px; margin-left: 20px;" id="sx" lay-submit lay-filter="dateBtn">筛选</button>
+        </div>
+      </form>
+      <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title">
+          <li class="layui-this">待处理</li>
+          <li>已解决</li>
+          <li>全部</li>
+        </ul>
+        <div class="layui-tab-content">
+          <div class="layui-tab-item layui-show">     
+            <table lay-filter="table_1">
+              <thead>
+                <tr>
+                  <th lay-data="{field:'dh', width:261}">单号</th>
+                  <th lay-data="{field:'username', width:260}">客户名称</th>
+                  <th lay-data="{field:'num', width:160}">回复次数</th>
+                  <th lay-data="{field:'createtime', width:260, sort:true}">创建时间</th>
+                  <th lay-data="{field:'date', width:260, sort:true}">最近回复日期</th>
+                  <th lay-data="{field:'curStatus', width:160}">客户状态</th>
+                  <th lay-data="{field:'gdStatus', width:160}">工单状态</th>
+                  <th lay-data="{field:'opertion', width:160}">操作</th>
+                </tr> 
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>66</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心1</td>
+                  <td>66</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心1</td>
+                  <td><a href="javascript:;" onClick="open_window('查看详情','.checkDestails','700','500')">查看详情</a></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>67</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心2</td>
+                  <td>66</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心1</td>
+                  <td><a href="javascript:;" onClick="open_window('查看详情','.checkDestails','700','500')">查看详情</a></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>66</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心3</td>
+                  <td>68</td>
+                  <td>人生就像是一场修行a</td>
+                  <td>贤心1</td>
+                  <td><a href="javascript:;" onClick="open_window('查看详情','.checkDestails','700','500')">查看详情</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="page" style="margin-top: 30px;text-align: center"></div>
+          </div>
+          <div class="layui-tab-item">内容2</div>
+          <div class="layui-tab-item">内容3</div>
+        </div>
+      </div> 
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司<br>
+咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+  </div>
+</div>
+
+<div class="checkDestails" style="display: none">
+  <!-- 待处理状态 -->
+  <!-- <div class="pending">
+     <div class="gdInfo">
+        <span class="gdType">工单分类：售前-社群</span>
+        <span class="curStatus">客户状态：选择未解决</span>
+     </div>
+     <div class="chartContent">
+        <div class="ueseInfo"><img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span>快乐的鸟仔</span></div>
+        <div class="status">
+          <span class="thisStatus">选择未解决</span>
+          <span class="time">2017-08-06 16:00</span>
+        </div>
+     </div>
+     <form class="layui-form" action="">
+        <div class="layui-form-item layui-form-text">
+          <label class="layui-form-label" style="padding-left: 0;width: 35px; text-align: left; padding-right: 10px;">回复</label>
+          <div class="layui-input-block" style="margin-left: 45px">
+            <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+          </div>
+        </div>
+        <div class="layui-form-item">
+          <div class="layui-input-block" style="margin-left: 45px">
+            <button type="button" class="layui-btn" style="width: 130px;">发送</button>
+          </div>
+        </div>
+     </form>
+   </div> -->
+   <!-- 已解决状态 -->
+   <div class="resolved">
+      <div class="gdInfo">
+        <span class="gdType">工单分类：售前-社群</span>
+        <span class="curStatus">客户状态：选择已解决</span>
+     </div>
+     <div class="chartContent" style="padding-left:0;border-bottom: 1px solid #e2e2e2">
+        <div class="ueseInfo"><img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span>快乐的鸟仔</span></div>
+        <div class="status">
+          <span class="thisStatus">选择已解决</span>
+          <span class="time">2017-08-06 16:00</span>
+        </div>
+     </div>
+     <div class="chartContent" style="padding-left:0;">
+        <div class="ueseInfo"><img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span>快乐的鸟仔</span></div>
+        <div class="status">
+          <p style="margin-bottom: 10px;">有个问题一直憋在我心里</p>
+          <span class="time">2017-08-06 16:00</span>
+        </div>
+     </div>
+     <div class="chartContent" style="padding-left:0; display: flex; padding-top: 0">
+        <div class="l" style="margin-right: 10px; line-height: 30px;">回复</div>
+        <div class="r">
+          <div class="ueseInfo"><img src="http://t.cn/RCzsdCq" class="layui-nav-img"><span>快乐的鸟仔</span></div>
+          <div class="status">
+            <p style="margin-bottom: 10px;">这个问题你听我这个老司机解释一下</p>
+            <span class="time">2017-08-06 16:00</span>
+          </div>
+        </div>
+     </div>
+   </div>
+</div>
+<script src="js/layui.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+$(function(){
+  //清除
+  $('#clear').on('click',function(){
+    $('input[name=date]').val('');
+    layer.msg('已清除')
+  })
+})
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+  //tab事件监听
+  element.on('tab(docDemoTabBrief)', function(data){
+    console.log(data);
+  });
+});
+//日期
+layui.use('laydate', function(){
+  var laydate = layui.laydate; 
+  //执行一个laydate实例
+  laydate.render({
+    elem: '#test1' //指定元素
+  });
+});
+//表格
+layui.use('table', function(){
+  var table = layui.table;
+  //转换静态表格
+  table.init('table_1', {
+    height: 480 //设置高度
+    //支持所有基础参数
+  }); 
+  //监听单元格事件
+  table.on('tool(table_1)', function(obj){
+    var data = obj.data;
+    console.info(data)
+    // if(obj.event === 'dh'){
+    //   layer.prompt({
+    //     formType: 2
+    //     ,title: '查看单号为 ['+ data.dh +'] 的用户详情'
+    //     ,value: data.sign
+    //   }, function(value, index){
+    //     layer.close(index);
+        
+    //     //这里一般是发送修改的Ajax请求
+        
+    //     //同步更新表格和缓存对应的值
+    //     obj.update({
+    //       dh: value
+    //     });
+    //   });
+    // }
+  });
+});
+</script>
+</body>
+</html>

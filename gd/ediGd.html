@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的工单</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/ydui.css?rev=@@hash"/>
+    <link href="css/diyUpload.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<section class="g-flexview">
+    <div class="g-scrollview">
+  		<div class="m-celltitle" style="margin-top: 0.2rem">问题所属工单</div>
+		<div class="m-cell">
+		    <div class="cell-item">
+		        <label class="cell-right cell-arrow">
+		            <select class="cell-select" name="one_level">
+		                <option value="">请选择一级分类</option>
+		                <option value="1">支付宝</option>
+		                <option value="2">微信</option>
+		                <option value="3">财付通</option>
+		            </select>
+		        </label>
+		    </div>
+		    <div class="cell-item">
+		        <label class="cell-right cell-arrow">
+		            <select class="cell-select">
+		                <option value="">请选择更详细的分类，便于更快解答您的疑问</option>
+		                <option value="1">支付宝</option>
+		                <option value="2">微信</option>
+		                <option value="3">财付通</option>
+		            </select>
+		        </label>
+		    </div>
+		</div>
+		<div class="m-celltitle">具体疑问</div>
+		<div class="m-cell changecell">
+		    <div class="cell-item">
+		        <div class="cell-right">
+		            <textarea class="cell-textarea" maxlength="800" name="textarea" placeholder="请在800字内描述您的疑问，我们将尽快地解答，稍后将有微信消息通知您解答结果~">我就是不明白为什么这个问题这么坑爹</textarea>
+		        </div>
+		    </div>
+		</div>
+		<div class="scPic">
+			<div class="filebox">
+				<input id="file" type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*">
+				<img src="img/phone.png" alt="">
+			</div>
+		</div>
+    </div>
+    <div class="creatGd">
+    	<div style="display: flex;">
+    	<button type="button" class="btn-block btn-primary" id="submitBtn" style="margin-right: 10px;">提交</button>
+    	<input type="button" class="btn-block btn-hollow" value="取消"/>
+    	</div>
+		<p>版权所有：@深圳博纳信息公司</p>
+	</div>
+</section>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/webiploader.js"></script>
+<script src="js/diyUpload.js"></script>
+<script src="js/index.js"></script>
+<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog
+        $('#submitBtn').on('click', function () {
+        	if($('select[name=one_level]').val()==''){
+        		dialog.notify('请选择一级分类', 1000);
+        		return
+        	}
+        	if($('textarea[name=textarea]').val()==''){
+        		dialog.notify('请输入具体疑问', 1000);
+        		return
+        	}
+        });
+    }(window, jQuery);
+</script>
+<script type="text/javascript">
+/*
+* 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
+* 其他参数同WebUploader
+*/
+$('#file').diyUpload({
+    url:'server/fileupload.php',
+    success:function( data ) {
+        console.info( data );
+    },
+    error:function( err ) {
+        console.info( err );  
+    },
+    buttonText : '选择文件',
+    chunked:true,
+    // 分片大小
+    chunkSize:512 * 1024,
+    //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
+    fileNumLimit:50,
+    fileSizeLimit:500000 * 1024,
+    fileSingleSizeLimit:50000 * 1024,
+    accept: {}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>我的工单</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link rel="stylesheet" href="css/ydui.css?rev=@@hash"/>
+    <link href="css/diyUpload.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
+<section class="g-flexview">
+    <div class="g-scrollview">
+  		<div class="m-celltitle" style="margin-top: 0.2rem">问题所属分类</div>
+        <div class="currentClass">
+            <div>售前</div>
+            <div><span>——</span>社群</div>
+        </div>
+        <div class="m-celltitle" style="margin-top: 0.2rem">当前状态</div>
+        <div class="dialogue">
+            <ul>
+                <li>
+                    <div class="question">
+                        <div class="l">
+                            <img src="img/people.png" alt="">
+                        </div>
+                        <div class="r">
+                            <div>我：</div>
+                            <div class="content">问题问题问题问题问题问题问题问题问题问题</div>
+                            <div class="time">创建时间：2017-08-12 16:00</div>
+                        </div>
+                    </div>
+                    <div class="answer">
+                        <div class="l">回复：</div>
+                        <div class="c">
+                            <img src="img/people.png" alt="">
+                        </div>
+                        <div class="r">
+                            <div>快乐的鸟仔：</div>
+                            <div class="content">答案答案答案答案答案</div>
+                            <div class="time">创建时间：2017-08-12 16:00</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-- 再次反馈内容 -->
+        <div id="feedback" style="display: none;margin-bottom: 1.8rem">
+            <div class="m-celltitle" style="margin-top: 0.2rem">再次反馈</div>
+            <div class="m-cell changecell">
+                <div class="cell-item">
+                    <div class="cell-right">
+                        <textarea class="cell-textarea" maxlength="800" name="textarea" placeholder="请在800字内描述您的疑问，我们将尽快地解答，稍后将有微信消息通知您解答结果~"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="scPic">
+                <div class="filebox">
+                    <input id="file" type="file" name="file" class="webuploader-element-invisible" multiple="multiple" accept="image/*">
+                    <img src="img/phone.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- 再次反馈内容 -->
+    </div>
+    <div class="creatGd" id="state_1">
+    	<div style="display: flex;">
+    	<button type="button" class="btn-block btn-primary" id="submitBtn" style="margin-right: 10px; margin-top: 0">已解决</button>
+    	<input type="button" class="btn-block btn-hollow" value="未解决" id="not_solve"  style=" margin-top: 0"/>
+    	</div>
+		<p>版权所有：@深圳博纳信息公司</p>
+	</div>
+    <div class="creatGd" id="state_2" style="display: none">
+        <div style="display: flex;">
+        <button type="button" class="btn-block btn-primary" id="confirmBtn" style="margin-right: 10px; margin-top: 0">提交</button>
+        <input type="button" class="btn-block btn-hollow" value="取消"  id="exit" style=" margin-top: 0"/>
+        </div>
+        <p>版权所有：@深圳博纳信息公司</p>
+    </div>
+</section>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/ydui.flexible.js"></script>
+<script src="js/ydui.js"></script>
+<script src="js/webiploader.js"></script>
+<script src="js/diyUpload.js"></script>
+<script src="js/index.js"></script>
+<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        //点击解决
+        $('#submitBtn').on('click', function () {
+            dialog.confirm('您确认我们的回复已经解决您的问题了吗？', function () {
+                dialog.toast('你点了确定', 'none', 1000);
+            });
+        });
+        //点击未解决
+        $('#not_solve').on('click', function () {
+            dialog.confirm('看来我们的回复并没有解决您的疑问，我们将继续跟进这个工单，继续对您做出回复~您看是否需要重新描述一下问题呢？', [
+                {
+                    txt: '不做更改',
+                    color: false, /* false:黑色  true:绿色 或 使用颜色值 */
+                },
+                {
+                    txt: '再次反馈',
+                    color: true,
+                    callback: function () {
+                        $('#state_1').hide();
+                        $('#state_2').show();
+                        $('#feedback').show();
+                        $('.dialogue').css('margin','0');
+                    }
+                }
+            ]);
+        });
+        //点击提交
+        $('body').on('click','#confirmBtn',function(){
+            var textarea=$('textarea[name=textarea]').val();
+            if(textarea==''){
+                dialog.notify('请输入反馈', 1000);
+                return
+            }
+        })
+        //点击取消
+        $('body').on('click','#exit',function(){
+            $('#state_2').hide();
+            $('#state_1').show();
+            $('#feedback').hide();
+            $('.dialogue').css('margin-bottom','1.8rem');
+        })
+    }(window, jQuery);
+</script>
+<script type="text/javascript">
+/*
+* 服务器地址,成功返回,失败返回参数格式依照jquery.ajax习惯;
+* 其他参数同WebUploader
+*/
+$('#file').diyUpload({
+    url:'server/fileupload.php',
+    success:function( data ) {
+        console.info( data );
+    },
+    error:function( err ) {
+        console.info( err );  
+    },
+    buttonText : '选择文件',
+    chunked:true,
+    // 分片大小
+    chunkSize:512 * 1024,
+    //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
+    fileNumLimit:50,
+    fileSizeLimit:500000 * 1024,
+    fileSingleSizeLimit:50000 * 1024,
+    accept: {}
+});
+</script>
+</body>
+</html>

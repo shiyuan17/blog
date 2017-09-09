@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>企动客服知识库</title>
+    <link type="text/css" href="css/reset.css" rel="stylesheet"/> 
+    <link type="text/css" href="css/style.css" rel="stylesheet"/> 
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="js/skin/default/layer.css">
+    <link rel="stylesheet" href="css/zTreeStyle.css" type="text/css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/layer.js"></script>
+    <script src="js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="js/jquery.ztree.exhide.js"></script>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <div class="user-info">
+            <div class="usr">
+                <span class="name">回显公众号名称</span>
+                <i class="triangle"></i>
+                <ul class="drop">
+                    <li>
+                        <a class="edi_data" href="javascript:;">
+                            <span class="text">编辑当前账号资料</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="man_gzh" href="javascript:;">
+                            <span class="text">管理其他公众号</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="return_sys" href="javascript:;">
+                            <span class="text">返回系统</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 左侧菜单 -->
+    <div class="sideBar">
+        <a class="logo" href="javascript:;">
+            <img src="img/logo.png">
+        </a>
+        <ul>
+            <li class="barList">
+                <a class="pic act clearfix" href="javascript:;">
+                    <span class="icon"></span>
+                    <span class="text">知识库</span>
+                </a>
+                <ul class="show">
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="zskzl.html">
+                            <span class="icon"></span>
+                            <span class="text">知识库管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="gdgl.html">
+                            <span class="icon"></span>
+                            <span class="text">工单管理</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic clearfix" href="cjwt.html">
+                            <span class="icon"></span>
+                            <span class="text">常见问题列表</span>
+                        </a>
+                    </li>
+                    <li class="twoMenuLi">
+                        <a class="pic act clearfix" href="bq.html">
+                            <span class="icon"></span>
+                            <span class="text">标签列表</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="yggl.html">
+                    <span class="icon"></span>
+                    <span class="text">员工管理</span>
+                </a>
+            </li>
+            <li class="barList">
+                <a class="pic clearfix" href="setting.html">
+                    <span class="icon"></span>
+                    <span class="text">设置中心</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- 中间内容 -->
+    <div class="mainContent clearfix">
+        <div class="center-con clearfix">
+            <h2 class="main-ttl">标签</h2>
+            <div class="main-ctn clearfix">
+                <div class="col-sm-12 pad0">
+                    <div class="col-sm-12 pad0">
+                        <div class="item clearfix">
+                            <input type="text" class="input-text" name="_q" placeholder="请输入标签">
+                            <button type="button" class="Btn ml10" id="search">搜索</button>
+                        </div>
+                        <div class="item clearfix">
+                            <button type="button" class="Btn" id="add_q" onclick="window.location.href='add_bq.html'">添加标签</button>
+                            <button type="button" class="Btn ml10" id="all_delete">批量删除</button>
+                            <button type="button" class="Btn ml10" id="add_execl" onclick="window.location.href='execl.html'">批量导入</button>
+                        </div>
+                        <table class="user-tb">
+                            <tbody>
+                                <tr class="tb-hd">
+                                    <th><input type="checkbox" name="allSelect"></th>
+                                    <th>序号</th>
+                                    <th>标签</th>
+                                    <th>最后编辑时间</th>
+                                    <th>编辑人</th>
+                                    <th>操作</th>
+                                </tr>
+                                <tr class="tb-ctn">
+                                    <td><input type="checkbox" name="checkbox"></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="add_bq.html" class="mr5">编辑</a>
+                                        <a class="delete" data-url="123" data-rel="0">删除</a>
+                                    </td>
+                                </tr>
+                                <tr class="tb-ctn">
+                                    <td><input type="checkbox" name="checkbox"></td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>
+                                        <a href="add_bq.html" class="mr5">编辑</a>
+                                        <a class="delete" data-url="123" data-rel="0">删除</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="tb-pager clearfix">
+                            <span class="pager-total">共4条数据</span>
+                            <span class="pager-txt">每页显示：</span>
+                            <select class="pager-select">
+                                <option>5</option>
+                                <option>10</option>
+                                <option>20</option>
+                            </select>
+                            <ul class="m-pager">
+                                <li class="first"><a>首页</a></li>
+                                <li class="prev active"><span>上一页</span></li>
+                                <li class="num active"><a>1</a></li>
+                                <li class="num"><span>2</span></li>
+                                <li class="next"><a>下一页</a></li>
+                                <li class="last"><a>尾页</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 弹出框 -->
+    <div class="m-modal">
+        <div class="sure-modal tip">
+            <div class="modal-hd">
+                <a class="close">
+                    <i></i>
+                </a>
+                <h3>提示</h3>
+            </div>
+            <div class="tip-text">确认要删除吗</div>
+            <div class="modal-ft clearfix">
+                <a href="" class="btn sure">确定</a>
+                <span class="btn cancel">取消</span>
+            </div>
+        </div>
+        <div class="tip-modal tip">
+            <div class="modal-hd">
+                <a class="close">
+                    <i></i>
+                </a>
+                <h3>提示</h3>
+            </div>
+            <div class="tip-text">该目录下有其他数据关联，请取消关联后再删除。</div>
+            <div class="modal-ft">
+                <span class="btn get-tip">知道了</span>
+            </div>
+        </div>
+    </div>
+    <!-- 底部内容 -->
+    <div class="footerContent clearfix navbar-fixed-bottom">
+Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司 | 咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+    </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>企动客服知识库</title>
+<link rel="stylesheet" href="css/layui.css">
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script> 
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo"><img src="img/logo.png" alt=""><span>企动</span><b>客服知识库</b></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="zsk.html">知识库</a></li>
+      <li class="layui-nav-item"><a href="gdMangement.html">工单管理</a><span class="layui-badge">66</span></li>
+      <li class="layui-nav-item layui-this"><a href="cjwt.html">常见问题</a></li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;" class="exit">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+          退出登录
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">售前</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="javascript:;">列表三</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">售后</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">特殊</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">列表一</a></dd>
+            <dd><a href="javascript:;">列表二</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <form class="layui-form" action="">
+        <div class="search layui-clear">
+          <div class="layui-col-xs6" style="position: relative;">
+            <img src="img/search.png" alt="" style="position: absolute;left:12px; top:9px;">
+            <input style="padding-left:40px; " type="text" name="cjwtSearch" required  lay-filter="cjwtSearch" placeholder="请输入问题或关键词" autocomplete="off" class="layui-input">
+          </div>
+          <div class="layui-col-xs6">
+            <button class="layui-btn" type="button" style="width: 130px; margin-left: 20px;" id="search" lay-submit lay-filter="cjwtSearch">检索</button>
+          </div>
+        </div>
+      </form>
+      <fieldset style="    border: none;padding: 0;border-top: 1px solid #e2e2e2; margin-top:30px ">
+        <legend style="margin-left: 20px; padding: 0 10px;font-size: 18px;"><a name="hr" style="color: #757575">社群</a></legend>
+      </fieldset>
+      <ul class="searchList">
+        <li>
+          <div class="topQuestion">
+            <div class="l">
+              <img src="img/q.png" alt="">
+              <div class="title">社群的会员卡功能怎么用？社群的会员卡功能怎么用？社群的会员卡功能怎么用？社群的会员卡功能怎么用？ </div>
+            </div>
+            <div class="r">
+              <button class="layui-btn checkAnswer" type="button" style="width: 112px; margin-top: 30px;">查看答案</button>
+            </div>
+          </div>
+          <div class="centerAnswer">
+            <div class="content">
+              <div class="l target1">
+                this is answer line1
+              </div>
+              <div class="r">
+                <button class="layui-btn copy_button" type="button" style="width: 112px; border: 1px solid #fff;background: #fff;color: #55c33b" ata-clipboard-action="copy" data-clipboard-target=".target1">复制</button>
+                <button class="layui-btn PackUp" type="button" style="width: 112px; border: 1px solid #fff;background: #fff;color: #55c33b;margin-left:0;margin-top: 10px;">收起</button>
+              </div>
+            </div>
+          </div>
+          <div class="bottomType">
+            <span>分类：社群</span>
+            <span class="hVer"></span>
+            <span>标签：会员卡、会员</span>
+          </div>
+        </li>
+        <li>
+          <div class="topQuestion">
+            <div class="l">
+              <img src="img/q.png" alt="">
+              <div class="title">社群的会员卡功能怎么用？社群的会员卡功能怎么用？社群的会员卡功能怎么用？社群的会员卡功能怎么用？ </div>
+            </div>
+            <div class="r">
+              <button class="layui-btn checkAnswer" type="button" style="width: 112px; margin-top: 30px;">查看答案</button>
+            </div>
+          </div>
+          <div class="centerAnswer">
+            <div class="content">
+              <div class="l target2">
+                this is answer line2
+              </div>
+              <div class="r">
+                <button class="layui-btn copy_button" type="button" style="width: 112px; border: 1px solid #fff;background: #fff;color: #55c33b" ata-clipboard-action="copy" data-clipboard-target=".target2">复制</button>
+                <button class="layui-btn PackUp" type="button" style="width: 112px; border: 1px solid #fff;background: #fff;color: #55c33b;margin-left:0;margin-top: 10px;">收起</button>
+              </div>
+            </div>
+          </div>
+          <div class="bottomType">
+            <span>分类：社群</span>
+            <span class="hVer"></span>
+            <span>标签：会员卡、会员</span>
+          </div>
+        </li>
+      </ul>
+      <div id="page" style="margin-top: 30px;text-align: center"></div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    Copyright@2012-2016 ibona.cn　All Right Reserved. 粤ICP备 14099207号-4 版权所有@深圳博纳移动信息技术有限公司<br>
+咨询热线：40007 22217 　公司总部：深圳福田区金地工业园127栋2层
+  </div>
+</div>
+<script src="js/layui.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/common.js"></script>
+<script>    
+    $(document).ready(function(){    
+        var targetText=$("#target").text();    
+        var clipboard = new Clipboard('.copy_button');    
+    
+        clipboard.on('success', function(e) {    
+            console.info('Action:', e.action);    
+            console.info('Text:', e.text);    
+            console.info('Trigger:', e.trigger);    
+            layer.msg('复制成功');     
+            e.clearSelection();    
+        }); 
+
+        //查看答案
+        $('.checkAnswer').on('click',function(){
+          $(this).parents('.topQuestion').css('padding-bottom','0')
+          $(this).parents('.topQuestion').siblings('.centerAnswer').slideDown()
+        })
+        //收起
+        $('body').on('click','.PackUp',function(){
+          $(this).parents('.centerAnswer').hide()
+          $(this).parents('.centerAnswer').siblings('.topQuestion').css('padding-bottom','20px')
+        })
+    });    
+</script> 
+<script>
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+});
+
+</script>
+</body>
+</html>
